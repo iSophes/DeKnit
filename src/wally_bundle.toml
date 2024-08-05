@@ -1,5 +1,5 @@
 [package]
-name = "sleitnick/knit-bundle"
+name = "isophes/deknit-bundle"
 version = "0.1.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
