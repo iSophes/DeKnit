@@ -1,4 +1,5 @@
 [![Release](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml)
+
 [![CI](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml)
 
 ## :warning: Knit is no longer maintained. :warning:
