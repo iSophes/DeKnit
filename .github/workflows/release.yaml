@@ -40,6 +40,7 @@ jobs:
         env:
           REMODEL_AUTH: ${{ secrets.RBX_AUTH }}
         run: |
+          ls
           remodel run publish.lua
       - name: Get version
         id: get_version
