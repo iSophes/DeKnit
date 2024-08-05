@@ -1,10 +1,11 @@
 [package]
-name = "sleitnick/knit"
-description = "Knit is a lightweight game framework"
+name = "isophes/deknit"
+description = "DeKnit is a lightweight game framework forked from Sleitnick's Knit module"
 version = "1.7.0"
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+authors = ["iSophes", "Stephen Leitnick"]
 
 [dependencies]
 Comm = "sleitnick/comm@^1"

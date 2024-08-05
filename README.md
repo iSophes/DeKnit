@@ -1,31 +1,30 @@
-[![Release](https://github.com/Sleitnick/Knit/actions/workflows/release.yaml/badge.svg)](https://github.com/Sleitnick/Knit/actions/workflows/release.yaml)
-[![CI](https://github.com/Sleitnick/Knit/actions/workflows/ci.yaml/badge.svg)](https://github.com/Sleitnick/Knit/actions/workflows/ci.yaml)
-[![Docs](https://github.com/Sleitnick/Knit/actions/workflows/docs.yaml/badge.svg)](https://github.com/Sleitnick/Knit/actions/workflows/docs.yaml)
+[![Release](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml)
+[![CI](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml)
 
 ## :warning: No Longer Maintained :warning:
 
-Knit has been archived and will no longer receive updates.
+Knit has been archived and will no longer receive updates. I have created DeKnit for those looking for a solution to Knit's flaws - it's not perfect and still has some issues that sleitnick has mentioned, but it implements fixes for most issues that were prevalent in Knit, that were originally worked around by the user and not the framework itself.
 
-Please [read here](/ARCHIVAL.md) for more information.
+Please [read here](/ARCHIVAL.md) for more information on Knit's archiva;.
 
-# Knit
+# DeKnit
 
-Knit is a lightweight framework for Roblox that simplifies communication between core parts of your game and seamlessly bridges the gap between the server and the client.
+DeKnit is a lightweight framework for Roblox that simplifies communication between core parts of your game and seamlessly bridges the gap between the server and the client. It is also a fork of sleitnick's Knit project. 
 
-Read the [documentation](https://sleitnick.github.io/Knit/) for more info.
+Read the [documentation](https://sleitnick.github.io/Knit/) for more info anout Knit, read this readme to see how to use DeKnit.
 
 ## Install
 
-Installing Knit is very simple. Just drop the module into ReplicatedStorage. Knit can also be used within a Rojo project.
+Installing DeKnit is very simple. Just drop the module into ReplicatedStorage. Knit can also be used within a Rojo project.
 
 **Roblox Studio workflow:**
 
-1. Get [Knit](https://www.roblox.com/library/5530714855/Knit) from the Roblox library.
-1. Place Knit directly within ReplicatedStorage.
+1. Get [DeKnit](https://www.roblox.com/library/5530714855/Knit) from the Roblox library.
+1. Place DeKnit directly within ReplicatedStorage.
 
 **Wally & Rojo workflow:**
 
-1. Add Knit as a Wally dependency (e.g. `Knit = "sleitnick/knit@^1"`)
+1. Add DeKnit as a Wally dependency (e.g. `DeKnit = "isophes/deknit@^1"`)
 1. Use Rojo to point the Wally packages to ReplicatedStorage.
 
 ## Basic Usage
@@ -35,12 +34,12 @@ The core usage of Knit is the same from the server and the client. The general p
 The most basic usage would look as such:
 
 ```lua
-local Knit = require(game:GetService("ReplicatedStorage").Packages.Knit)
+local DeKnit = require(game:GetService("ReplicatedStorage").Packages.DeKnit)
 
-Knit.Start():catch(warn)
--- Knit.Start() returns a Promise, so we are catching any errors and feeding it to the built-in 'warn' function
+DeKnit.Start():catch(warn)
+-- DeKnit.Start() returns a Promise, so we are catching any errors and feeding it to the built-in 'warn' function
 -- You could also chain 'await()' to the end to yield until the whole sequence is completed:
---    Knit.Start():catch(warn):await()
+--    DeKnit.Start():catch(warn):await()
 ```
 
 That would be the necessary code on both the server and the client. However, nothing interesting is going to happen. Let's dive into some more examples.
@@ -50,12 +49,10 @@ That would be the necessary code on both the server and the client. However, not
 A service is simply a structure that _serves_ some specific purpose. For instance, a game might have a MoneyService, which manages in-game currency for players. Let's look at a simple example:
 
 ```lua
-local Knit = require(game:GetService("ReplicatedStorage").Packages.Knit)
+local DeKnit = require(game:GetService("ReplicatedStorage").Packages.DeKnit)
 
 -- Create the service:
-local MoneyService = Knit.CreateService {
-	Name = "MoneyService",
-}
+local MoneyService =  {}
 
 -- Add some methods to the service:
 
@@ -72,7 +69,7 @@ function MoneyService:GiveMoney(player, amount)
 	someDataStore:SetAsync("money", money)
 end
 
-Knit.Start():catch(warn)
+DeKnit.Start():catch(warn)
 ```
 
 Now we have a little MoneyService that can get and give money to a player. However, only the server can use this at the moment. What if we want clients to fetch how much money they have? To do this, we have to create some client-side code to consume our service. We _could_ create a controller, but it's not necessary for this example.
@@ -94,14 +91,14 @@ We can write client-side code to fetch money from the service:
 
 ```lua
 -- Client-side code
-local Knit = require(game:GetService("ReplicatedStorage").Packages.Knit)
-Knit.Start():catch(warn):await()
+local DeKnit = require(game:GetService("ReplicatedStorage").Packages.DeKnit)
+DeKnit.Start():catch(warn):await()
 
-local MoneyService = Knit.GetService("MoneyService")
+local MoneyService = DeKnit:GetService("MoneyService")
 
 MoneyService:GetMoney():andThen(function(money)
 	print(money)
 end)
 ```
 
-Under the hood, Knit is creating a RemoteFunction bound to the service's GetMoney method. Knit keeps RemoteFunctions and RemoteEvents out of the way so that developers can focus on writing code and not building networking infrastructure.
+Under the hood, DeKnit is creating a RemoteFunction bound to the service's GetMoney method. DeKnit keeps RemoteFunctions and RemoteEvents out of the way so that developers can focus on writing code and not building networking infrastructure.

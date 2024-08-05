@@ -1,16 +1,16 @@
 -- Remodel Publish script
 
-local KNIT_ASSET_ID = "5530714855"
+local DEKNIT_ASSET_ID = "18812793726"
 
-print("Loading Knit")
-local place = remodel.readPlaceFile("Knit.rbxl")
+print("Loading DeKnit")
+local place = remodel.readPlaceFile("DeKnit.rbxl")
 local Packages = place.ReplicatedStorage.Packages
-Packages.Knit.Packages:Destroy()
+Packages.DeKnit.Packages:Destroy()
 
-print("Writing Knit module to model file...")
-remodel.writeModelFile("Knit.rbxm", Packages)
-print("Knit model written")
+print("Writing DeKnit module to model file...")
+remodel.writeModelFile("DeKnit.rbxm", Packages)
+print("DeKnit model written")
 
-print("Publishing Knit module to Roblox...")
-remodel.writeExistingModelAsset(Packages, KNIT_ASSET_ID)
-print("Knit asset published")
+print("Publishing DeKnit module to Roblox...")
+remodel.writeExistingModelAsset(Packages, DEKNIT_ASSET_ID)
+print("DeKnit asset published")

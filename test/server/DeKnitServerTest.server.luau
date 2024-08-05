@@ -1,7 +1,6 @@
 local Knit = require(game:GetService("ReplicatedStorage").Test.Knit)
 
-local MyService = Knit.CreateService({
-	Name = "MyService",
+local MyService = {
 	Client = {
 		TestEvent = Knit.CreateSignal(),
 		TestProperty = Knit.CreateProperty("Hello"),
@@ -20,9 +19,9 @@ local MyService = Knit.CreateService({
 			end,
 		},
 	},
-})
+}
 
-function MyService:KnitInit()
+function MyService:Init()
 	self.Client.TestEvent:Connect(function(player, msg)
 		print("Got message from client event:", player, msg)
 		self.Client.TestEvent:Fire(player, msg:lower())

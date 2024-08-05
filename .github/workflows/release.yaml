@@ -34,8 +34,8 @@ jobs:
           cd ..
       - name: Build place file
         run: |
-          rojo build publish.project.json -o Knit.rbxl
-      - name: Publish Knit to Roblox
+          rojo build publish.project.json -o DeKnit.rbxl
+      - name: Publish DeKnit to Roblox
         shell: bash
         env:
           REMODEL_AUTH: ${{ secrets.RBX_AUTH }}
@@ -54,4 +54,4 @@ jobs:
           body_path: log.md
           fail_on_unmatched_files: true
           files: |
-            Knit.rbxm
+            DeKnit.rbxm

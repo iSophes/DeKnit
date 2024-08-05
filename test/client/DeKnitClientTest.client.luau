@@ -1,11 +1,9 @@
-local Knit = require(game:GetService("ReplicatedStorage").Test.Knit)
+local DeKnit = require(game:GetService("ReplicatedStorage").Test.DeKnit)
 
-local MyController = Knit.CreateController({
-	Name = "MyController",
-})
+local MyController = {}
 
-function MyController:KnitInit()
-	local MyService = Knit.GetService("MyService")
+function MyController:Init()
+	local MyService = DeKnit:GetService("MyService")
 	MyService.TestEvent:Connect(function(msg)
 		print("Got event from server:", msg)
 	end)
@@ -18,7 +16,7 @@ function MyController:KnitInit()
 	end)
 end
 
-Knit.Start({ ServicePromises = true })
+DeKnit.Start({ ServicePromises = true })
 	:andThen(function()
 		print("KnitClient started")
 	end)
