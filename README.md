@@ -1,7 +1,7 @@
 [![Release](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml)
 [![CI](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml)
 
-## :warning: No Longer Maintained :warning:
+## :warning: Knit is no longer maintained. :warning:
 
 Knit has been archived and will no longer receive updates. I have created DeKnit for those looking for a solution to Knit's flaws - it's not perfect and still has some issues that sleitnick has mentioned, but it implements fixes for most issues that were prevalent in Knit, that were originally worked around by the user and not the framework itself.
 
@@ -19,7 +19,7 @@ Installing DeKnit is very simple. Just drop the module into ReplicatedStorage. K
 
 **Roblox Studio workflow:**
 
-1. Get [DeKnit](https://www.roblox.com/library/5530714855/Knit) from the Roblox library.
+1. Get [DeKnit](https://www.roblox.com/library/18812793726/DeKnit) from the Roblox library.
 1. Place DeKnit directly within ReplicatedStorage.
 
 **Wally & Rojo workflow:**
