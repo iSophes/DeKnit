@@ -40,7 +40,7 @@ jobs:
         env:
           REMODEL_AUTH: ${{ secrets.RBX_AUTH }}
         run: |
-          remodel run publish.luau
+          remodel run publish.lua
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
