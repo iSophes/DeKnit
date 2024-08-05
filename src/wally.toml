@@ -1,7 +1,7 @@
 [package]
 name = "isophes/deknit"
 description = "DeKnit is a lightweight game framework forked from Sleitnick's Knit module"
-version = "1.7.0"
+version = "2.0.0"
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"

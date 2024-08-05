@@ -1,4 +1,4 @@
-## 1.7.0 - DEKNIT FORK
+## 2.0.0 - DEKNIT FORK
 
 - Removes dynamic requires like Knit.GetService() on the server and GetController() on the client
 - Removed significant boilerplate when creating services and controllers

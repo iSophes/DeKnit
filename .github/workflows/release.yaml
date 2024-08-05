@@ -19,6 +19,7 @@ jobs:
         env:
           WALLY_AUTH: ${{ secrets.WALLY_AUTH }}
         run: |
+          rm -rf ~./wally
           mkdir -p ~/.wally
           echo "$WALLY_AUTH" > ~/.wally/auth.toml
           cd src
