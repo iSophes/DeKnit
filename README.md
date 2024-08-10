@@ -2,20 +2,16 @@
 <p align="center">
   <a href="https://github.com/isophes/deknit/ci"
     ><img
-      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/ci.yml?branch=master&label=CI&style=for-the-badge"
+      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/ci.yaml?branch=master&label=CI&style=for-the-badge"
       alt="CI"
   /></a>
 
   <a href="https://github.com/isophes/deknit/release"
     ><img
-      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/release.yml?branch=master&label=Release&style=for-the-badge"
+      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/release.yaml?branch=master&label=Release&style=for-the-badge"
       alt="Release Status"
   /></a>
 </p>
-
-[![Release](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/release.yaml)
-
-[![CI](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml/badge.svg)](https://github.com/iSophes/DeKnit/actions/workflows/ci.yaml)
 
 ## :warning: Knit is no longer maintained. :warning:
 
