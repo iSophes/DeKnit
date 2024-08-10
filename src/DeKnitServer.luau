@@ -26,7 +26,7 @@ type Service = {
 type ServerMiddlewareFn = (player: Player, args: { any }) -> (boolean, ...any)
 type ServerMiddleware = { ServerMiddlewareFn }
 
-local Packages = script.Parent.Packages
+local Packages = script.Parent.Parent
 local Comm = require(Packages.Comm)
 local ServerComm = Comm.ServerComm
 local Promise = require(Packages.Promise)

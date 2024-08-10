@@ -35,7 +35,7 @@ local DefaultOptions: DeKnitControllerOptions = {
 
 local DeKnitClient = {}
 
-local Packages = script.Parent.Packages
+local Packages = script.Parent.Parent
 local Promise = require(Packages.Promise)
 local Comm = require(Packages.Comm)
 local ClientComm = Comm.ClientComm
