@@ -2,14 +2,14 @@
 <p align="center">
   <a href="https://github.com/isophes/deknit/ci"
     ><img
-      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/ci.yaml?branch=master&label=CI&style=for-the-badge"
+      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/actions/workflows/ci.yaml?branch=master&label=CI&style=for-the-badge"
       alt="CI"
   /></a>
 </p>
 <p align="center">
   <a href="https://github.com/isophes/deknit/release"
     ><img
-      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/release.yaml?branch=master&label=Release&style=for-the-badge"
+      src="https://img.shields.io/github/actions/workflow/status/isophes/deknit/actions/workflows/release.yaml?branch=master&label=Release&style=for-the-badge"
       alt="Release Status"
   /></a>
 </p>
