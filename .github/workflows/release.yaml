@@ -3,8 +3,8 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
-  
+      - "v*"
+
 jobs:
   build:
     name: Upload Release Asset
@@ -12,8 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Install Aftman
-        uses: ok-nick/setup-aftman@v0.4.2
+
+      - name: Install Rokit
+        uses: CompeyDev/setup-rokit@v0.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Publish release to Wally
         shell: bash
         env:
@@ -35,12 +39,16 @@ jobs:
       - name: Build place file
         run: |
           rojo build publish.project.json -o DeKnit.rbxl
+
+      - name: Build DeKnit model
+        run: lune run build.luau
+
       - name: Publish DeKnit to Roblox
         shell: bash
         env:
-          REMODEL_AUTH: ${{ secrets.RBX_AUTH }}
+          MODEL_AUTH: ${{ secrets.MODEL_AUTH }}
         run: |
-          remodel run publish.lua
+          rbxcloud assets update asset_id 18812793726 file DeKnit.rbxm api_key "$MODEL_AUTH"
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
