@@ -48,7 +48,7 @@ jobs:
         env:
           MODEL_AUTH: ${{ secrets.MODEL_AUTH }}
         run: |
-          rbxcloud assets update --asset_id 18812793726 --filepath DeKnit.rbxm --api_key "$MODEL_AUTH"
+          rbxcloud assets update --asset-id 18812793726 --filepath DeKnit.rbxm --api-key "$MODEL_AUTH"
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
