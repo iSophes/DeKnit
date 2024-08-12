@@ -43,18 +43,14 @@ jobs:
       - name: Build DeKnit model
         run: lune run build.luau
 
-      - name: Publish DeKnit to Roblox
-        shell: bash
-        env:
-          MODEL_AUTH: ${{ secrets.MODEL_AUTH }}
-        run: |
-          rbxcloud assets update --asset-id 18812793726 --filepath DeKnit.rbxm --api-key "$MODEL_AUTH"
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
       - name: Changelog
         run: python3 last_changelog.py CHANGELOG.md > log.md
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
